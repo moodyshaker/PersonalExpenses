@@ -11,3 +11,6 @@
     8- Email validator.
     9- Path provider.
     10- intl package.
+    
+### Download apk version:-
+    https://www.mediafire.com/file/wcubhg5j8xsqrep/personal_expenses.apk/file
