@@ -54,7 +54,11 @@ class _EditUsernameBSDState extends State<EditUsernameBSD> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: EdgeInsets.only(
+          top: 12.0,
+          right: 12.0,
+          left: 12.0,
+          bottom: MediaQuery.of(context).viewInsets.bottom + 12.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -82,7 +86,7 @@ class _EditUsernameBSDState extends State<EditUsernameBSD> {
           SizedBox(
             height: 8.0,
           ),
-           InfoButton(
+          InfoButton(
             textColor: Colors.white,
             buttonColor: Colors.purple,
             onPress: () async {

@@ -49,13 +49,6 @@ class Auth {
     return listOfEmailMethods;
   }
 
-  Future<User> getUserFromCredential(AuthCredential credential) async {
-    UserCredential userCredential =
-        await _firebaseAuth.signInWithCredential(credential);
-    User user = userCredential.user;
-    return user;
-  }
-
   Future<String> createNewUser(String email, String password,
       {String displayName, String photoUrl}) async {
     try {

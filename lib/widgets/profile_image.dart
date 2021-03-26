@@ -37,6 +37,12 @@ class ProfileImage extends StatelessWidget {
           GestureDetector(
             onTap: () async {
               showModalBottomSheet(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12.0),
+                    topRight: Radius.circular(12.0),
+                  ),
+                ),
                 context: context,
                 builder: (context) => GetImageDialog(
                   data: data,

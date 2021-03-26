@@ -162,11 +162,6 @@ class AppLogic extends ChangeNotifier {
     return user;
   }
 
-  Future<User> registerWithCredential(AuthCredential credential) async {
-    User user = await _auth.getUserFromCredential(credential);
-    return user;
-  }
-
   Future<UserProfile> facebookLogin() async {
     UserProfile user = await _auth.facebookSignIn();
     return user;
