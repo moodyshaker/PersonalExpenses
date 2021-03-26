@@ -30,17 +30,16 @@ class Auth {
       FacebookLoginResult result = await _facebookLogin.logIn(['email']);
       if (result.status == FacebookLoginStatus.loggedIn) {
         http.Response graphResponse = await http.get(
-          'https://graph.facebook.com/v2.12/me?fields=name,email&access_token=${result.accessToken.token}',
+          Uri.parse(
+              'https://graph.facebook.com/v2.12/me?fields=name,email&access_token=${result.accessToken.token}'),
         );
         var profile = json.decode(graphResponse.body);
         UserProfile user = UserProfile.fromJson(json.decode(graphResponse.body),
             'http://graph.facebook.com/${profile['id']}/picture?type=large');
         return user;
       } else if (result.status == FacebookLoginStatus.cancelledByUser) {
-      } else if (result.status == FacebookLoginStatus.error) {
-      }
-    } catch (e) {
-    }
+      } else if (result.status == FacebookLoginStatus.error) {}
+    } catch (e) {}
   }
 
   Future<List<String>> verifyEmail(String email) async {
